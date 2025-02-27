@@ -1,0 +1,15 @@
+.base-info-wrapper{
+  padding: 10px;
+  .property-row{
+    display: flex;
+    &:not(:last-child){
+      margin-bottom: 5px;
+    }
+    .property-key{
+      flex-basis: 50%;
+    }
+    .property-value{
+      flex-basis: 50%;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.tool-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  height: 27px;
+  padding: 0 10px;
+  border-bottom: 1px solid #d3e3fd;
+  z-index: 1;
+  background-color: #fff;
+  .clear-btn {
+    font-size: 18px;
+    margin-left: 12px;
+    color: rgb(71, 71, 71);
+    &:hover {
+      color: #202124;
+    }
+  }
+}

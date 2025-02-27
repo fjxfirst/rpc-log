@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>atu-request-devtool测试页面</title>
+</head>
+<body>
+<button id="req-btn">测试发送</button>
+<button id="res-btn">测试响应</button>
+<hr>
+推送操作
+<button id="msg-btn">测试推送</button>
+</body>
+<script>
+  const reqBtn = document.getElementById('req-btn');
+  const resBtn = document.getElementById('res-btn');
+  const msgBtn = document.getElementById('msg-btn');
+  const reqInfo = {
+    reqHead: {
+      token: 'Uc0wB4E0cwXX3wNfnvJ8_',
+      request_id: 'task-get-by-id',
+      request_nano_id: 'deCkOo6E-UMLjhPhDQKB',
+      service_name: 'plugin.platform.task'
+    },
+    reqData: {
+      request_header: {
+        controller_id: '4C60A1916418431C86D88237512C1C18',
+        project_id: 'EACC8E2556AB4595AE04ADC5AF86A33',
+        request_id: 'task-get-by-id',
+        request_nano_id: 'deCkOo6E-UMLjhPhDQKB',
+        sign: 'DF65842FDF064295AD844745D8306AC1',
+        solution_id: 'AEC57892215A49A4987727E8362AA693',
+        token: 'Uc0wB4E0cwXX3wNfnvJ8_',
+        username: '',
+        version: 'V1.0.0.A'
+      },
+      data: {taskid: '5E9F8499063C4787B7C2103A8233A28B'}
+    }
+  };
+  const resBody = {
+    'error': {
+      'error_id': 0,
+      'error_level': 34,
+      'error_desc': {'desc_key': true, 'desc': '', 'params': []}
+    },
+    'header': {
+      'token': 'Uc0wB4E0cwXX3wNfnvJ8_',
+      'request_id': 'task-get-by-id',
+      'request_nano_id': 'deCkOo6E-UMLjhPhDQKB',
+      'service_name': 'plugin.platform.task'
+    },
+    'data': {
+      'taskid': '5E9F8499063C4787B7C2103A8233A28B',
+      'taskname': 'MainTask',
+      'tasktype': 'IEC',
+      'type': 'Cyclic',
+      'language': 'IEC',
+      'desc': '',
+      'groupid': 'F72521656A1241829755242A96CC3409',
+      'groupname': 'TaskGroup',
+      'priority': 1,
+      'indexid': 0,
+      'cpubind': 'freebind',
+      'cyclic': 500000,
+      'eventvarname': '',
+      'var_full_path': '',
+      'main': '',
+      'watchdog': {'watchdogenable': true, 'watchdogtime': 500000, 'watchdogsensitivity': 1},
+      'pous': []
+    }
+  };
+  let request_nano_id = 1;
+  const nanoIdStack = [];
+  reqBtn.addEventListener('click', () => {
+    reqInfo.reqHead.request_nano_id = request_nano_id;
+    reqInfo.reqData.request_header.request_nano_id = request_nano_id;
+    nanoIdStack.push(request_nano_id);
+    window.__atu_devtool.recordReq(reqInfo.reqHead, reqInfo.reqData, request_nano_id, Date.now());
+    request_nano_id++;
+  });
+  resBtn.addEventListener('click', () => {
+    if (nanoIdStack.length <= 0) {
+      return;
+    }
+    const nanoId = nanoIdStack.shift();
+    resBody.header.request_nano_id = nanoId;
+    window.__atu_devtool.recordFetchRes(resBody, nanoId, Date.now());
+  });
+  msgBtn.addEventListener('click', () => {
+    console.log(resBody);
+    resBody.header.request_nano_id = Date.now();
+    window.__atu_devtool.recordMsgRes(resBody, Date.now());
+  });
+</script>
+</html>

@@ -1,0 +1,48 @@
+.tab-bar {
+  display: flex;
+  background-color: #edeff6;
+  padding: 0 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  .close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .close-btn-icon{
+      color: #56575b;
+      &:hover{
+        color: #080a14;
+      }
+    }
+  }
+  .tab-list {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    .tab-item {
+      padding: 6px 10px;
+      line-height: 1;
+      cursor: default;
+      position: relative;
+      &:hover {
+        background-color: #e0e2e9;
+      }
+      &_active {
+        color: #1b0ef3;
+        &:after {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #1b0ef3;
+        }
+      }
+    }
+  }
+  .tab-view {
+    padding: 10px;
+  }
+}

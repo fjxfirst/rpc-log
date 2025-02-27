@@ -1,0 +1,58 @@
+.request-info-wrapper {
+  .item-detail-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 6px;
+    background-color: #f7f9fd;
+    border: 1px solid #d3e3fd;
+
+    .mr15 {
+      margin-right: 15px;
+    }
+
+    .ant-checkbox-wrapper {
+      line-height: 1;
+    }
+
+    //antd 的 checkbox 样式覆盖
+    .ant-checkbox + span {
+      padding-inline-start: 2px;
+      padding-inline-end: 0;
+      line-height: 1;
+    }
+
+    .ant-checkbox .ant-checkbox-inner {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ant-checkbox .ant-checkbox-inner:after {
+      width: 5px;
+      height: 9px;
+      inset-inline-start: 24%;
+    }
+  }
+}
+
+.operate-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.small-btn {
+  border: 1px solid #c7c7c7;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 3px 4px;
+  height: 12px;
+  line-height: 12px;
+  color: #222;
+  cursor: default;
+
+  &:hover {
+    color: #000;
+    background-color: #f2f2f2;
+  }
+}

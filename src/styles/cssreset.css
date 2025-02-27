@@ -1,0 +1,16 @@
+html, body, div, h1, h2, h3, h4, h5, h6, header, hgroup, ul, li, ol, dd, dt, dl {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  font-size: 14px;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
