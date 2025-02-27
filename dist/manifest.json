@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "atu-request-devtool",
+  "version": "1.0.0",
+  "description": "记录并管理atu请求和消息推送",
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "devtools_page": "devtools.html",
+  "permissions": ["storage", "tabs", "<all_urls>"],
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": ["js/inject.js"]
+}
