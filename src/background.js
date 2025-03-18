@@ -16,7 +16,7 @@ const portHandle = (port, portHandler, messageHandler, disconnectHandler) => {
 };
 
 chrome.runtime.onConnect.addListener((port) => {
-  if (port.name.startsWith('panel-')) {
+  if (port.name.startsWith('panel_')) {
     portHandle(port, panelPortHandler, panelMessageHandler, panelDisconnectHandler);
   } else if (port.name === 'content') {
     portHandle(port, contentPortHandler, contentMessageHandler, contentDisConnectHandler);

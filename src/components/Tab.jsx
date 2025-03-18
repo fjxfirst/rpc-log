@@ -25,7 +25,7 @@ const Tab = (props) => {
           {
             views.map((item) => (
               <li
-                className={activeKey === item.key ? 'tab-item tab-item.active' : 'tab-item'}
+                className={activeKey === item.key ? 'tab-item tab-item_active' : 'tab-item'}
                 key={item.key}
                 onClick={() => tabClickHandler(item)}
               >

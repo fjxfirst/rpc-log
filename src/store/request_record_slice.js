@@ -22,7 +22,7 @@ const filterWithQueryParameter = (queryParameter, requestList) => {
         return true;
       }
       if ((item.requestDetail && queryStr === item.requestDetail.reqHead.service_name)
-        || queryStr === item.responseDetail.header.service.service_name) {
+        || queryStr === item.responseDetail.header.service_name) {
         return true;
       }
       if (item.responseDetail && JSON.stringify(item.responseDetail.data).includes(queryStr)) {

@@ -38,19 +38,19 @@ const LogTable = (props) => {
   const dispatch = useDispatch();
   const columns = [
     {
-      title: ' 请求 ID',
+      title: '请求 ID',
       dataIndex: 'requestId',
       render: (value, record, index) => {
         if (record.requestType === 'FETCH') {
           return (<div><PullRequestOutlined style={{marginRight: 5, color: '#1b6ef3'}}/>{value}</div>);
-        } else if (record.requestType === 'NSG') {
+        } else if (record.requestType === 'MSG') {
           return (<div><SendOutlined style={{marginRight: 5, color: '#c588f0'}}/>{value}</div>);
         }
       }
     },
-    {title: ' 类型 ', dataIndex: 'requestType', width: 50, render: value => value === 'FETCH' ? ' 请求 ' : ' 推送 '},
+    {title: '类型', dataIndex: 'requestType', width: 50, render: value => value === 'FETCH' ? '请求' : '推送'},
     {
-      title: ' 状态 ', //-1: 等待中 0: 成功 1: 失败 2: 未处理（只针对消息推送）
+      title: '状态', //-1: 等待中 0: 成功 1: 失败 2: 未处理（只针对消息推送）
       dataIndex: 'requestState',
       width: 100,
       render: value => {
@@ -118,7 +118,7 @@ const LogTable = (props) => {
   const rowClassName = (record, index) => {
     let rowClassText = index % 2 === 0 ? 'even-row' : 'odd-row';
     if (record.id === selectedRow.id) {
-      rowClassText = 'row-selected ${rowClassText}';
+      rowClassText = `row-selected ${rowClassText}`;
     }
     return rowClassText;
   };

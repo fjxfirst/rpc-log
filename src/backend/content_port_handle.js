@@ -45,7 +45,7 @@ export const contentMessageHandler = (message, port) => {
         reqRecordManage.addMsgRecord({
           id: reqId++,
           requestState,
-          requestId: resBody.error.request_id,
+          requestId: resBody.header.request_id,
           requestType,
           receiveTime,
           responseDetail: resBody

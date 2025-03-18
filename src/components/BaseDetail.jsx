@@ -42,7 +42,7 @@ const BaseDetail = ({requestRecord}) => {
     return '';
   }, [requestRecord])
   return (
-    <div className="base-info-wrapped">
+    <div className="base-info-wrapper">
       <div className="property-row">
         <div className="property-key">request_nano_id</div>
         <div className="property-value">{request_nano_id}</div>

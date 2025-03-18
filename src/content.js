@@ -24,8 +24,8 @@ let portContentToBackground = chrome.runtime.connect({ name: 'content' });
 const pageMessageHandle = (event) => {
   const { source, data } = event;
   if (source === window && data.type === 'FROM_ATU_PAGE') {
-    const { payLoadData } = data;
-    portContentToBackground.postMessage({ type: 'REQUEST_EVENT', data: payLoadData });
+    const { payloadData } = data;
+    portContentToBackground.postMessage({ type: 'REQUEST_EVENT', data: payloadData });
   }
 };
 const pageUnloadHandle = (event) => {

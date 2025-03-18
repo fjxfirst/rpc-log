@@ -44,6 +44,7 @@ const App = () => {
       children: <ResponseDetail requestRecord={selectedRecord}/>
     }
   ] : [];
+  console.log('tabViews', tabViews);
   const logWrapperHeight = useMemo(() => isShowFilterBar ? 'calc(100vh - 81px)' : 'calc(100vh - 52px)', [isShowFilterBar]);
   const countInfo = useMemo(() => {
     const total = originRequestList.length;
@@ -128,6 +129,7 @@ const App = () => {
         <>
           <div className="split-line" ref={splitLine}></div>
           <DetailSider width={siderWidth}>
+            {/*{tabViews.map(item => item.children)}*/}
             <Tab tabViews={tabViews} onClose={closeDetailSider}/>
           </DetailSider>
         </>

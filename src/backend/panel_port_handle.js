@@ -1,8 +1,9 @@
-import { RequestRecordManage, tabReqRecordMap} from './data_manage';
+import { RequestRecordManage, tabReqRecordMap } from './data_manage';
 
 export const panelPortHandler = (port) => {
-  const tabId = parseInt(port.name.split('-')[1]);
+  const tabId = parseInt(port.name.split('_')[1]);
   let reqRecordManage;
+  console.log('tabReqRecordMap', tabReqRecordMap);
   if (tabReqRecordMap.has(tabId)) {
     reqRecordManage = tabReqRecordMap.get(tabId);
     reqRecordManage.panelPort = port;
@@ -14,7 +15,7 @@ export const panelPortHandler = (port) => {
 };
 export const panelMessageHandler = (message, port) => {
   console.log('panelMessageHandler', message);
-  const tabId = parseInt(port.name.split('-')[1]);
+  const tabId = parseInt(port.name.split('_')[1]);
   let reqRecordManage = tabReqRecordMap.get(tabId);
   switch (message.type) {
     case 'get-req-records': {
@@ -52,7 +53,7 @@ export const panelMessageHandler = (message, port) => {
   }
 }
 export const panelDisconnectHandler = (port) => {
-  const tabId = parseInt(port.name.split('-')[1]);
+  const tabId = parseInt(port.name.split('_')[1]);
   let reqRecordManage;
   if(tabReqRecordMap.has(tabId)) {
     reqRecordManage = tabReqRecordMap.get(tabId);

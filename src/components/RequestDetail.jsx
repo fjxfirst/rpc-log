@@ -1,5 +1,5 @@
 import DetailView from './DetailView';
-const RequestDetail=(requestRecord)=> {
+const RequestDetail=({requestRecord})=> {
   if (!requestRecord || !requestRecord.requestDetail) return null;
   const {requestDetail} = requestRecord;
   return (

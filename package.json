@@ -8,7 +8,7 @@
     "build:watch": "cross-env NODE_ENV=development webpack --watch"
   },
   "author": "fengjianxiong",
-  "private": true,
+  "private": false,
   "license": "ISC",
   "dependencies": {
     "@ant-design/icons": "^5.3.7",

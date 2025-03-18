@@ -18,29 +18,29 @@ const FilterBar = (props) => {
     { label: ' 请求 ', value: 'FETCH' },
     { label: ' 推送 ', value: 'MSG' }
   ];
-  const isEmptyQueryParameterObj = (queryData) => Object.keys (queryData).every (key => queryData [key] === '');
+  const isEmptyQueryParameterObj = (queryData) => Object.keys(queryData).every(key => queryData[key] === '');
   const queryParameterChangeHandle = (queryParameter) => {
-    dispatch (setIsOnFiltering (isEmptyQueryParameterObj (queryParameter)));
-    dispatch (setQueryParameter (queryParameter));
-    queryParameterChange && queryParameterChange (queryParameter);
+    dispatch(setIsOnFiltering(!isEmptyQueryParameterObj(queryParameter)));
+    dispatch(setQueryParameter (queryParameter));
+    queryParameterChange && queryParameterChange(queryParameter);
   };
   const filterInputChange = (e) => {
-    const value = e.target.value.trim ();
+    const value = e.target.value.trim();
     if (value!== queryStr) {
       setQueryStr (value);
-      const newQueryParameterObj = setQueryParameterObj ((draft) => {
+      const newQueryParameterObj = setQueryParameterObj((draft) => {
         draft.queryStr = value;
       });
-      queryParameterChangeHandle (newQueryParameterObj);
+      queryParameterChangeHandle(newQueryParameterObj);
     }
   };
   const checkTagCheckHandle = (value) => {
     if (queryType!== value) {
-      setQueryType (value);
-      const newQueryParameterObj = setQueryParameterObj ((draft) => {
+      setQueryType(value);
+      const newQueryParameterObj = setQueryParameterObj((draft) => {
         draft.queryType = value;
       });
-      queryParameterChangeHandle (newQueryParameterObj);
+      queryParameterChangeHandle(newQueryParameterObj);
     }
   }
   const helpText = `查询说明：依次按照优先级①请求ID、②服务名、③响应数据匹配查询，有结果即停止后续的匹配`;

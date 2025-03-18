@@ -25,14 +25,14 @@ const ToolBar = (props) => {
     });
   };
   const menuProps = {
-    items: [{label: ' 关于 ', key: 'about'}],
+    items: [{label: '关于', key: 'about'}],
     onClick: (e) => {
       if (e.key === 'about') {
         Modal.info({
-          title: ' 关于 ATUNetwork',
+          title: '关于 ATUNetwork',
           icon: null,
           content: <span>版本号：{appJson.version}</span>,
-          okText: ' 确定 '
+          okText: '确定'
         });
       }
     }
