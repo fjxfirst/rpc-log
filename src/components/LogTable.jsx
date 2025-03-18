@@ -24,6 +24,7 @@ import {
 } from '@ant-design/icons';
 
 const LogTable = (props) => {
+  const {rowClick, parentWrapper, tableWidth} = props;
   const [selectedRow, setSelectedRow] = useState([]);
   const [tableScrollY, setTableScrollY] = useState(0);
   const tableWrapper = useRef();

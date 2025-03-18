@@ -50,8 +50,8 @@ module.exports = {
           options: {
             modules: {
               auto: /\.module\.css$/i,
-              localIdent: '[name]_[local]_[hash:base64:5]',
-              exportLocalIdent: 'camelCase'
+              localIdentName: '[name]_[local]_[hash:base64:5]',
+              exportLocalsConvention: 'camelCase'
             }
           }
         }]
@@ -63,8 +63,8 @@ module.exports = {
           options: {
             modules: {
               auto: /\.module\.scss$/i,
-              localIdent: '[name]_[local]_[hash:base64:5]',
-              exportLocalIdent: 'camelCase'
+              localIdentName: '[name]_[local]_[hash:base64:5]',
+              exportLocalsConvention: 'camelCase'
             }
           }
         },

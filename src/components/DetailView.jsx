@@ -2,7 +2,7 @@ import {Checkbox, message} from 'antd';
 import {ObjectInspector, chromeLight} from 'react-inspector';
 import {useState} from 'react';
 import {copyValue} from '../utils';
-import JsonToTS from 'json - to - ts';
+import JsonToTS from 'json-to-ts';
 
 const DetailView = (props) => {
   const {title, dataObj} = props;

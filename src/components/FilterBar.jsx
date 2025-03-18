@@ -16,7 +16,7 @@ const FilterBar = (props) => {
   const reqTypes = [
     { label: 'All', value: '' },
     { label: ' 请求 ', value: 'FETCH' },
-    { label: ' 推送 ', value: '' }
+    { label: ' 推送 ', value: 'MSG' }
   ];
   const isEmptyQueryParameterObj = (queryData) => Object.keys (queryData).every (key => queryData [key] === '');
   const queryParameterChangeHandle = (queryParameter) => {

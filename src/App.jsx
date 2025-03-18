@@ -133,13 +133,6 @@ const App = () => {
         </>
       }
     </div>
-    <div className="footer-bar">
-      总计：{countInfo.total}
-      <Divider type="vertical"/>
-      请求：{countInfo.fetchCount}
-      <Divider type="vertical"/>
-      推送：{countInfo.pushCount}
-    </div>
   </>;
 };
 export default App;
